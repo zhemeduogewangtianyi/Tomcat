@@ -28,11 +28,18 @@ public class Response {
         if(file.exists()){
             FileInputStream fis = new FileInputStream(file);
             BufferedInputStream readFile = new BufferedInputStream(fis);
-            byte[] data = new byte[1024];
+            byte[] data = new byte[2048];
             int len;
+            String http = "HTTP/1.1 200\r\n" +
+                    "Content-Type: text/html;charset=UTF-8\r\n" +
+                    "Content-Length: ";
+            StringBuilder buff = new StringBuilder();
             while((len = readFile.read(data)) != -1){
-                bos.write(data , 0 , len);
+                buff.append(new String(data , 0 , len));
             }
+            http += buff.toString().length() + "\r\n\r\n";
+            http += buff.toString();
+            os.write(http.getBytes());
             fis.close();
         }else{
             String body = "<h1>文件没找着</h1>";

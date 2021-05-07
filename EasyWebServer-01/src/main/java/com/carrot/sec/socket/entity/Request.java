@@ -52,7 +52,7 @@ public class Request {
             String last = requestString.substring(first + 1);
             int tail = last.indexOf(" ");
             if(tail != -1){
-                String uri = last.substring(0, tail);
+                return last.substring(0, tail);
             }
         }
         return null;

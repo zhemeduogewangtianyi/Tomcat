@@ -9,17 +9,17 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        new Thread(() -> {
-            SocketClient socketClient = new SocketClient();
-            try {
-                Thread.sleep(5000);
-                socketClient.request();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
+//        new Thread(() -> {
+//            SocketClient socketClient = new SocketClient();
+//            try {
+//                Thread.sleep(5000);
+//                socketClient.request();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }).start();
 
 
         HttpServer httpServer = new HttpServer();

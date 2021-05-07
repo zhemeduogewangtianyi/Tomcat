@@ -11,7 +11,6 @@ public class SocketClient {
 
         //获得输入输出流
         PrintWriter pw = new PrintWriter(socket.getOutputStream() , true);
-        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream() , "UTF-8"));
 
         //根据请求协议发送协议内容
         pw.println("GET /index.html HTTP/1.1");
@@ -19,21 +18,24 @@ public class SocketClient {
         pw.println("Connection: Close");
         pw.println();
 
+        socket.shutdownOutput();
+
         //读取返回的内容
+        BufferedInputStream bis = new BufferedInputStream(socket.getInputStream());
         StringBuilder buff = new StringBuilder();
-        String data;
-        while (br.ready() && (data = br.readLine()) != null){
-            buff.append(data);
+        int len;
+        byte[] data = new byte[1024];
+        while ((len = bis.read(data)) != -1){
+            buff.append(new String(data , 0 , len));
             Thread.sleep(50);
         }
 
         //撸数据
         System.out.println(buff.toString());
 
-        //关流
-        pw.close();
-        br.close();
+        bis.close();
         socket.close();
+
     }
 
 }

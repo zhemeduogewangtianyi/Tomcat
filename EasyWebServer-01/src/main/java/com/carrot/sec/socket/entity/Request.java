@@ -25,14 +25,20 @@ public class Request {
         BufferedInputStream bis = new BufferedInputStream(is);
         StringBuilder sb = new StringBuilder();
         int len;
-        byte[] data = new byte[1024];
-        while((len = bis.read(data)) != -1){
-            sb.append(new String(data , 0 , len));
+        byte[] data = new byte[2048];
+//        while((len = bis.read(data)) != -1){
+//            sb.append(new String(data , 0 , len));
+//        }
+
+        int read = bis.read(data);
+
+        for(int j = 0 ; j < read ; j++){
+            sb.append((char) data[j]);
         }
+
 
         String requestString = sb.toString();
         this.uri = this.parseUri(requestString);
-        is.close();
     }
 
     //从解析的请求数据中获取 uri

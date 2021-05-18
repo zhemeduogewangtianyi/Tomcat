@@ -1,6 +1,6 @@
-package sec;
+package com.carrot.sec;
 
-import sec.servlet.HttpServlet1;
+import com.carrot.sec.servlet.HttpServlet1;
 
 public class Main {
 

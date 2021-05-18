@@ -1,6 +1,6 @@
-package sec.entity;
+package com.carrot.sec.entity;
 
-import sec.constant.Constants;
+import com.carrot.sec.constant.Constants;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;

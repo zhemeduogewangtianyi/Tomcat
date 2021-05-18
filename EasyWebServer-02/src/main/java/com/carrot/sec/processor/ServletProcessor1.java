@@ -1,8 +1,7 @@
-package sec.processor;
+package com.carrot.sec.processor;
 
-import sec.constant.Constants;
-import sec.entity.Request;
-import sec.entity.Response;
+import com.carrot.sec.entity.Request;
+import com.carrot.sec.entity.Response;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
@@ -17,12 +16,12 @@ public class ServletProcessor1 {
     public void processor(Request request, Response response) {
         String uri = request.getUri();
         String servletName = uri.substring(uri.lastIndexOf("/") +1);
-        servletName = "sec.servlet.init." + servletName;
+        servletName = "com.carrot.sec.servlet.init." + servletName;
         URLClassLoader loader = null;
         try {
             URL[] urls = new URL[1];
             URLStreamHandler urlStreamHandler = null;
-            String webInfo = System.getProperty("user.dir") + File.separator + "classes/sec/servlet/init";
+            String webInfo = System.getProperty("user.dir") + File.separator + "classes/com/carrot/sec/servlet/init";
             File classPath = new File(webInfo);
 
             String s = classPath.getCanonicalPath() + File.separator;

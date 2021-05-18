@@ -1,4 +1,4 @@
-package sec.entity;
+package com.carrot.sec.entity;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletInputStream;

@@ -1,7 +1,7 @@
-package sec.processor;
+package com.carrot.sec.processor;
 
-import sec.entity.Request;
-import sec.entity.Response;
+import com.carrot.sec.entity.Request;
+import com.carrot.sec.entity.Response;
 
 import java.io.IOException;
 

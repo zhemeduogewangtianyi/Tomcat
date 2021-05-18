@@ -11,6 +11,7 @@
     <modules>
         <module>EasyWebServer-01</module>
         <module>EasyWebServer-02</module>
+        <module>EasyWebServer-03</module>
     </modules>
 
     <build>

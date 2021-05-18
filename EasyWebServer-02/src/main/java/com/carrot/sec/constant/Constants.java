@@ -1,4 +1,4 @@
-package sec.constant;
+package com.carrot.sec.constant;
 
 import java.io.File;
 

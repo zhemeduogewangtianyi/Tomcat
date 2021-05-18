@@ -1,9 +1,9 @@
-package sec.servlet;
+package com.carrot.sec.servlet;
 
-import sec.entity.Request;
-import sec.entity.Response;
-import sec.processor.ServletProcessor1;
-import sec.processor.StaticResourceProcessor1;
+import com.carrot.sec.entity.Request;
+import com.carrot.sec.entity.Response;
+import com.carrot.sec.processor.ServletProcessor1;
+import com.carrot.sec.processor.StaticResourceProcessor1;
 
 import java.io.IOException;
 import java.io.InputStream;

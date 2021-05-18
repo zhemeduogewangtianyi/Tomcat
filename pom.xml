@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>EasyWebServer-01</module>
+        <module>EasyWebServer-02</module>
     </modules>
 
     <build>

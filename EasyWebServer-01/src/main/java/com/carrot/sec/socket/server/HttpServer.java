@@ -25,18 +25,20 @@ public class HttpServer {
         //创建一个服务端 Socket 第二个参数是 请求的传入连接队列的最大长度
         ServerSocket ss = new ServerSocket(8001,1,InetAddress.getByName("127.0.0.1"));
 
-        //阻塞等到请求的到来
-        Socket accept = ss.accept();
+        while(true){
+            //阻塞等到请求的到来
+            Socket accept = ss.accept();
 
-        InputStream is = accept.getInputStream();
-        OutputStream os = accept.getOutputStream();
+            InputStream is = accept.getInputStream();
+            OutputStream os = accept.getOutputStream();
 
-        Request request = new Request(is);
+            Request request = new Request(is);
 
-        Response response = new Response(request, os);
+            Response response = new Response(request, os);
 
-        os.close();
-        is.close();
+            os.close();
+            is.close();
+        }
 
     }
 
